@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/** --- Colors --- */
+
+:root {
+--primaryRed: hsl(0, 100%, 74%); 
+--primaryGreen: hsl(154, 59%, 51%);
+
+--accentBlue: hsl(248, 32%, 49%);
+
+--neutralDarkBlue: hsl(249, 10%, 26%);
+--neutralGrayishBlue: hsl(246, 25%, 77%);
+}
+
+/** --- CSS Reset --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/** --- Global Styles --- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./images/bg-intro-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--primaryRed);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/** --- Intro --- */
+
+
+.intro h1, .intro p {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.intro p {
+    line-height: 2;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0 15px;
+}
+
+/* --- Banner button--- */
+
+.banner-btn {
+    height: 80px;
+    width: 80%;
+    background-color: var(--accentBlue);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 10px 5px 0px rgba(88, 88, 88, 0.28);
+    text-align: center;
+    color: var(--neutralGrayishBlue);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.banner-btn span {
+    font-weight: 600;
+    color: #fff;
+}
+
+/** --- Form --- */
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 80%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 10px 5px 0px rgba(88, 88, 88, 0.28);
+}
+
+.form-item {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+input {
+    height: 50px;
+    width: 100%;
+    border: 1px solid var(--neutralGrayishBlue);
+    border-radius: 4px;
+    font-family: inherit;
+    font-weight: 400;
+    padding: 10px;
+}
+
+input::placeholder {
+    color: var(--neutralDarkBlue);
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.btn {
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px 5px 5px 0px rgba(88, 88, 88, 0.28);
+    background-color: var(--primaryGreen);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.outro {
+    font-family: inherit;
+    color: var(--neutralGrayishBlue);
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 15px;
+}
+
+.outro a {
+    color: var(--primaryRed);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/** --- Error handling styles --- **/ 
+
+
+.form-item.error input {
+	border-color: var(--primaryRed);
+}
+
+.form-item.success input {
+	border-color: var(--neutralGrayishBlue);
+}
+
+.form-item i {
+	visibility: hidden;
+	position: absolute;
+    top: 15px;
+    right: 10px;
+    background-image: url("./images/icon-error.svg");
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.form-item.error i.error-icon {
+	color: var(--primaryRed);
+	visibility: visible;
+}
+
+.form-item p {
+	color: var(--primaryRed);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-item.error p {
+	visibility: visible;
+}
+
+.error-icon {
+    visibility: hidden;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background-image: url("./images/icon-error.svg");
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.error-message {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    height: 20px;
+}
+
+@media (min-width: 768px) {
+    body {
+        background-image: url("./images/bg-intro-desktop.png");
+    }
+
+    main {
+        flex-direction: row;
+        width: 1300px;
+    }
+
+    .left {
+        flex: 45%;
+    }
+
+    .right {
+        flex: 55%;
+    }
+
+    .intro h1 {
+        font-size: 46px;
+        text-align: left;
+    }
+
+    .intro p {
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .banner-btn {
+        height: 60px;
+    }
+
+    .form {
+        padding: 40px 30px;
+    }
+}
